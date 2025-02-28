@@ -1,8 +1,106 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    border: 0;
+    border: none;
 }
-body{
-    width: 200px;
+
+body {
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 6px #00000020;
+    background-color: #B3CEE5;
+}
+
+h3 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.sider,
+.top,
+.background,
+.template {
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 6px #00000020;
+}
+
+#save {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 4px 4px 6px #0000002a;
+    background-color: #91B8D9;
+}
+#save:hover{
+    background-color: #6FA2CE;
+    box-shadow: 5px 5px 8px #0000002a;
+
+}
+
+summary {
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2px 0;
+    height: 30px;
+}
+
+.color label {
+    font-size: 12px;
+}
+
+details .color {
+    margin-left: 8px;
+    position: relative;
+    padding-left: 20px;
+
+}
+
+details .color::before {
+    content: "🎨";
+    /* Unicode 图标 */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    /* 图标大小 */
+}
+
+input[type="color"] {
+    width: 50px;
+    height: 24px;
+    -webkit-appearance: none;
+    border: none;
+    padding: 0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+}
+
+.template-button{
+width: 30px;
+height: 30px;
+cursor: pointer;
 }

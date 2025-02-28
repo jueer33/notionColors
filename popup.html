@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Notion 颜色设置</title>
@@ -7,53 +8,71 @@
     <script src="utils.js"></script>
     <script src="popup.js"></script>
 </head>
+
 <body>
     <h3>自定义Notion颜色</h3>
     <div class="sider">
-        <label for="sidebar-color">侧边栏颜色：</label>
-        <input type="color" id="sidebar-color">
+        <div class="color">
+            <label for="sidebar-color">侧边栏颜色：</label>
+            <input type="color" id="sidebar-color">
+        </div>
         <details>
             <summary>更多侧边栏颜色</summary>
-            <div>
+            <div class="color">
                 <label for="sidebar-user-color">侧边用户栏颜色：</label>
                 <input type="color" id="sidebar-user-color" data-parent="sidebar-color">
             </div>
-            <div>
+            <div class="color">
                 <label for="sidebar-item-color">侧边目录颜色：</label>
                 <input type="color" id="sidebar-item-color" data-parent="sidebar-color">
             </div>
-            <div>
+            <div class="color">
                 <label for="sidebar-footer-color">侧边底部颜色：</label>
                 <input type="color" id="sidebar-footer-color" data-parent="sidebar-color">
             </div>
         </details>
     </div>
-    
+
     <div class="top">
-        <label for="topbar-color">顶部栏颜色：</label>
-        <input type="color" id="topbar-color">
+        <div class="color">
+            <label for="topbar-color">顶部栏颜色：</label>
+            <input type="color" id="topbar-color">
+        </div>
         <details>
             <summary>更多顶部颜色</summary>
-            <div>
+            <div class="color">
                 <label for="topbar-option-color">顶部选项颜色</label>
                 <input type="color" id="topbar-option-color" data-parent="topbar-color">
             </div>
-            <div>
+            <div class="color">
                 <label for="topbar-path-color">顶部路径颜色</label>
                 <input type="color" id="topbar-path-color" data-parent="topbar-color">
             </div>
-            <div>
+            <div class="color">
                 <label for="topbar-share-color">顶部分享颜色</label>
                 <input type="color" id="topbar-share-color" data-parent="topbar-color">
             </div>
         </details>
     </div>
     <div class="background">
-        <label for="background-color">背景颜色：</label>
-        <input type="color" id="background-color">
+        <div class="color">
+            <label for="background-color">背景颜色：</label>
+            <input type="color" id="background-color">
+        </div>
+
     </div>
-    <button id="save">保存</button>
+    <div class="template">
+        <details>
+            <summary>没有灵感？--> 模板</summary>
+            <button id="template-light" class="template-button">浅色模板</button>
+            <button id="template-dark" class="template-button">深色模板</button>
+
+        </details>
+    </div>
+    <button id="save">save</button>
     <script src="utils.js"></script>
     <script src="popup.js"></script>
+    <script src="template.js"></script>
 </body>
+
 </html>

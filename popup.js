@@ -1,3 +1,4 @@
+// 基本功能，实现颜色的选取与保存
 window.addEventListener('load', () => {
     // 初始化默认颜色值
     const defaultColors = {
@@ -61,7 +62,7 @@ window.addEventListener('load', () => {
     // 主颜色变化处理函数
     const handleMainColorChange = (mainInputId) => {
         const mainInput = document.getElementById(mainInputId);
-        mainInput.addEventListener('input', function() {
+        mainInput.addEventListener('input', function () {
             const subInputs = document.querySelectorAll(`[data-parent="${mainInputId}"]`);
             subInputs.forEach(input => {
                 if (input.getAttribute('data-customized') === 'false') {
@@ -74,7 +75,7 @@ window.addEventListener('load', () => {
     // 子颜色输入处理函数
     const handleSubColorChange = (subInputs) => {
         subInputs.forEach(input => {
-            input.addEventListener('input', function() {
+            input.addEventListener('input', function () {
                 this.setAttribute('data-customized', 'true');
             });
         });

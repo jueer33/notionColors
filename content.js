@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
             // 延迟 1 秒执行，确保页面内容完全加载
             setTimeout(() => {
                 applyColors(colors);
-            }, 2000);
+            }, 5000);
         }
     });
 });
