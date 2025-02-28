@@ -4,13 +4,21 @@
  */
 function applyColors(colors) {
     // 应用侧边栏颜色
-    const sidebar = document.querySelector('.notion-sidebar-container');
+    const sidebar = document.querySelector('.notion-sidebar');
     const sidebarUser = document.querySelector('#notion-app > div > div:nth-child(1) > div > nav > div > div > div > div:nth-child(4) > div:nth-child(1)');
+    const sidebarOption = document.querySelector("#notion-app > div > div:nth-child(1) > div > nav > div > div > div > div:nth-child(4) > div:nth-child(2)");
     const sidebarItem = document.querySelector("#notion-app > div > div:nth-child(1) > div > nav > div > div > div > div:nth-child(4) > div:nth-child(4) > div > div:nth-child(2) > div:nth-child(1)");
     const sidebarFooter = document.querySelector('#notion-app > div > div:nth-child(1) > div > nav > div > div > div > div:nth-child(4) > div:nth-child(5)');
 
     if (sidebar) sidebar.style.backgroundColor = colors.sidebar.main;
     if (sidebarUser) sidebarUser.style.backgroundColor = colors.sidebar.user;
+    if (sidebarOption) {
+        sidebarOption.style.backgroundColor = colors.sidebar.option;
+        sidebarOption.style.paddingLeft = '8px';
+        sidebarOption.style.paddingRight = '8px';
+        sidebarOption.style.marginLeft = '0';
+        sidebarOption.style.marginRight = '0';
+    }
     if (sidebarItem) sidebarItem.style.backgroundColor = colors.sidebar.item;
     if (sidebarFooter) sidebarFooter.style.backgroundColor = colors.sidebar.footer;
 
@@ -28,6 +36,10 @@ function applyColors(colors) {
     // 应用背景颜色
     const background = document.querySelector('.notion-frame');
     if (background) background.style.backgroundColor = colors.background;
+
+    // 应用 Inbox 颜色
+    const inbox = document.querySelector('div.notion-scroller.vertical'); 
+    if (inbox) inbox.style.backgroundColor = colors.inbox;
 }
 
 

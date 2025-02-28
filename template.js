@@ -4,6 +4,7 @@ const templates = {
         sidebar: {
             main: '#f5f5f5',
             user: '#e0e0e0',
+            option: '#eeeeee',
             item: '#eeeeee',
             footer: '#e0e0e0'
         },
@@ -13,12 +14,14 @@ const templates = {
             path: '#eeeeee',
             share: '#e0e0e0'
         },
-        background: '#ffffff'
+        background: '#ffffff',
+        inbox: '#e0e0e0'
     },
     dark: {
         sidebar: {
             main: '#2d2d2d',
             user: '#3d3d3d',
+            option: '#4d4d4d',
             item: '#4d4d4d',
             footer: '#3d3d3d'
         },
@@ -28,7 +31,8 @@ const templates = {
             path: '#4d4d4d',
             share: '#3d3d3d'
         },
-        background: '#1e1e1e'
+        background: '#1e1e1e',
+        inbox: '#e0e0e0'
     }
 };
 
@@ -39,6 +43,7 @@ const applyTemplate = (template) => {
     // 设置侧边栏颜色
     document.getElementById('sidebar-color').value = colors.sidebar.main;
     document.getElementById('sidebar-user-color').value = colors.sidebar.user;
+    document.getElementById('sidebar-option-color').value = colors.sidebar.option
     document.getElementById('sidebar-item-color').value = colors.sidebar.item;
     document.getElementById('sidebar-footer-color').value = colors.sidebar.footer;
 
@@ -50,6 +55,9 @@ const applyTemplate = (template) => {
 
     // 设置背景颜色
     document.getElementById('background-color').value = colors.background;
+
+    // 设置inbox颜色
+    document.getElementById('inbox-color').value = colors.inbox;
 
     // 保存颜色配置
     saveColors(colors);

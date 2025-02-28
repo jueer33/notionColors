@@ -5,6 +5,7 @@ window.addEventListener('load', () => {
         sidebar: {
             main: '#ffffff',
             user: '#ffffff',
+            option: '#ffffff',
             item: '#ffffff',
             footer: '#ffffff'
         },
@@ -14,7 +15,8 @@ window.addEventListener('load', () => {
             path: '#ffffff',
             share: '#ffffff'
         },
-        background: '#ffffff'
+        background: '#ffffff',
+        inbox: '#ffffff'
     };
 
     // 从存储中获取颜色设置
@@ -25,6 +27,7 @@ window.addEventListener('load', () => {
         const sidebarColor = colors.sidebar.main;
         document.getElementById('sidebar-color').value = sidebarColor;
         document.getElementById('sidebar-user-color').value = colors.sidebar.user || sidebarColor;
+        document.getElementById('sidebar-option-color').value = colors.sidebar.option || sidebarColor;
         document.getElementById('sidebar-item-color').value = colors.sidebar.item || sidebarColor;
         document.getElementById('sidebar-footer-color').value = colors.sidebar.footer || sidebarColor;
 
@@ -37,6 +40,9 @@ window.addEventListener('load', () => {
 
         // 设置背景颜色
         document.getElementById('background-color').value = colors.background;
+        // 设置inbox颜色
+        document.getElementById('inbox-color').value = colors.inbox;
+
 
         // 初始化自定义状态
         initCustomization();
@@ -46,7 +52,7 @@ window.addEventListener('load', () => {
     const initCustomization = () => {
         // 侧边栏
         const sidebarMain = document.getElementById('sidebar-color').value;
-        ['user', 'item', 'footer'].forEach(type => {
+        ['user', 'option','item', 'footer'].forEach(type => {
             const input = document.getElementById(`sidebar-${type}-color`);
             input.setAttribute('data-customized', input.value !== sidebarMain ? 'true' : 'false');
         });
@@ -78,6 +84,7 @@ window.addEventListener('load', () => {
         // 获取侧边栏主颜色
         const sidebarColor = document.getElementById('sidebar-color').value;
         const sidebarUserColor = document.getElementById('sidebar-user-color').value || sidebarColor;
+        const sidebarOptionColor = document.getElementById('sidebar-option-color').value || sidebarColor;
         const sidebarItemColor = document.getElementById('sidebar-item-color').value || sidebarColor;
         const sidebarFooterColor = document.getElementById('sidebar-footer-color').value || sidebarColor;
 
@@ -85,6 +92,7 @@ window.addEventListener('load', () => {
         const sidebarColors = {
             main: sidebarColor,
             user: sidebarUserColor,
+            option: sidebarOptionColor,
             item: sidebarItemColor,
             footer: sidebarFooterColor
         };
@@ -107,13 +115,15 @@ window.addEventListener('load', () => {
 
         // 获取背景颜色
         const backgroundColor = document.getElementById('background-color').value;
+        const inboxColor = document.getElementById('inbox-color').value;
 
         // 保存到浏览器存储
         chrome.storage.sync.set({
             notionColors: {
                 sidebar: sidebarColors,
                 topbar: topbarColors,
-                background: backgroundColor
+                background: backgroundColor,
+                inbox: inboxColor
             }
         });
 
@@ -126,7 +136,8 @@ window.addEventListener('load', () => {
                     args: [{
                         sidebar: sidebarColors,
                         topbar: topbarColors,
-                        background: backgroundColor
+                        background: backgroundColor,
+                        inbox: inboxColor
                     }]
                 });
             }
