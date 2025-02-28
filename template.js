@@ -73,15 +73,6 @@ const saveColors = (colors) => {
     });
 };
 
-// 添加模板按钮的事件监听器
-document.getElementById('template-light').addEventListener('click', () => {
-    applyTemplate('light');
-});
-
-document.getElementById('template-dark').addEventListener('click', () => {
-    applyTemplate('dark');
-});
-
 // 初始化事件监听
 const initEventListeners = () => {
     // 主颜色监听
@@ -93,14 +84,16 @@ const initEventListeners = () => {
     handleSubColorChange(document.querySelectorAll('[data-parent="topbar-color"]'));
 
     // 模板按钮监听
-    document.getElementById('template-light').addEventListener('click', () => {
+    document.getElementById('template-light')?.addEventListener('click', () => {
         applyTemplate('light');
     });
 
-    document.getElementById('template-dark').addEventListener('click', () => {
+    document.getElementById('template-dark')?.addEventListener('click', () => {
         applyTemplate('dark');
     });
 };
 
-// 初始化事件监听
-initEventListeners();
+// 确保 DOM 完全加载后再初始化事件监听
+document.addEventListener('DOMContentLoaded', () => {
+    initEventListeners();
+});

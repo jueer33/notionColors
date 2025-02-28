@@ -29,3 +29,26 @@ function applyColors(colors) {
     const background = document.querySelector('.notion-frame');
     if (background) background.style.backgroundColor = colors.background;
 }
+
+
+// 主颜色变化处理函数
+const handleMainColorChange = (mainInputId) => {
+    const mainInput = document.getElementById(mainInputId);
+    mainInput.addEventListener('input', function () {
+        const subInputs = document.querySelectorAll(`[data-parent="${mainInputId}"]`);
+        subInputs.forEach(input => {
+            if (input.getAttribute('data-customized') === 'false') {
+                input.value = this.value;
+            }
+        });
+    });
+};
+
+// 子颜色输入处理函数
+const handleSubColorChange = (subInputs) => {
+    subInputs.forEach(input => {
+        input.addEventListener('input', function () {
+            this.setAttribute('data-customized', 'true');
+        });
+    });
+};
