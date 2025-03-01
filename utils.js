@@ -38,7 +38,7 @@ function applyColors(colors) {
     if (background) background.style.backgroundColor = colors.background;
 
     // 应用 Inbox 颜色
-    const inbox = document.querySelector('div.notion-scroller.vertical'); 
+    const inbox = document.querySelector('.notion-cursor-listener').children[2];
     if (inbox) inbox.style.backgroundColor = colors.inbox;
 }
 

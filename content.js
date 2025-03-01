@@ -21,7 +21,7 @@ function applyColors(colors) {
         .notion-topbar-action-buttons { background-color: ${colors.topbar.share} ; }
 
         .notion-frame { background-color: ${colors.background} ; }
-        #notion-app > div > div:nth-child(1) > div > div:nth-child(4){ background-color: ${colors.inbox} ; }
+        .notion-cursor-listener > :nth-child(3){ background-color: ${colors.inbox} ; }
     `;
     document.head.appendChild(style);
 }
