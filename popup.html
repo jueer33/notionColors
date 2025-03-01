@@ -9,71 +9,111 @@
 
 <body>
     <h3>自定义Notion颜色</h3>
-    <div class="sider">
-        <div class="color">
-            <label for="sidebar-color">侧边栏颜色：</label>
-            <input type="color" id="sidebar-color">
+
+    <div class="layout">
+        <div class="sider">
+            <div class="color">
+                <label class="little-header" for="sidebar-color">侧边栏颜色：</label>
+                <input type="color" id="sidebar-color">
+            </div>
+            <details>
+                <summary>更多侧边栏颜色</summary>
+                <div class="color">
+                    <label for="sidebar-user-color">侧边用户栏颜色：</label>
+                    <input type="color" id="sidebar-user-color" data-parent="sidebar-color">
+                </div>
+                <div class="color">
+                    <label for="sidebar-option-color">侧边选项颜色：</label>
+                    <input type="color" id="sidebar-option-color" data-parent="sidebar-color">
+                </div>
+                <div class="color">
+                    <label for="sidebar-item-color">侧边目录颜色：</label>
+                    <input type="color" id="sidebar-item-color" data-parent="sidebar-color">
+                </div>
+                <div class="color">
+                    <label for="sidebar-footer-color">侧边底部颜色：</label>
+                    <input type="color" id="sidebar-footer-color" data-parent="sidebar-color">
+                </div>
+            </details>
         </div>
-        <details>
-            <summary>更多侧边栏颜色</summary>
+        <div class="top">
             <div class="color">
-                <label for="sidebar-user-color">侧边用户栏颜色：</label>
-                <input type="color" id="sidebar-user-color" data-parent="sidebar-color">
+                <label class="little-header" for="topbar-color">顶部栏颜色：</label>
+                <input type="color" id="topbar-color">
             </div>
+            <details>
+                <summary>更多顶部颜色</summary>
+                <div class="color">
+                    <label for="topbar-option-color">顶部选项颜色</label>
+                    <input type="color" id="topbar-option-color" data-parent="topbar-color">
+                </div>
+                <div class="color">
+                    <label for="topbar-path-color">顶部路径颜色</label>
+                    <input type="color" id="topbar-path-color" data-parent="topbar-color">
+                </div>
+                <div class="color">
+                    <label for="topbar-share-color">顶部分享颜色</label>
+                    <input type="color" id="topbar-share-color" data-parent="topbar-color">
+                </div>
+            </details>
+        </div>
+        <div class="setting">
             <div class="color">
-                <label for="sidebar-option-color">侧边选项颜色：</label>
-                <input type="color" id="sidebar-option-color" data-parent="sidebar-color">
+                <label class="little-header" for="setting-color">设置颜色</label>
+                <input type="color" id="setting-color">
             </div>
+            <details>
+                <summary>更多设置颜色</summary>
+                <div class="color">
+                    <label for="setting-left-color">设置左边颜色</label>
+                    <input type="color" id="setting-left-color" data-parent="setting-color">
+                </div>
+                <div class="color">
+                    <label for="setting-right-color">设置右边颜色</label>
+                    <input type="color" id="setting-right-color" data-parent="setting-color">
+                </div>
+            </details>
+        </div>
+        <div class="template">
             <div class="color">
-                <label for="sidebar-item-color">侧边目录颜色：</label>
-                <input type="color" id="sidebar-item-color" data-parent="sidebar-color">
+                <label class="little-header" for="template-color">模板颜色</label>
+                <input type="color" id="template-color">
             </div>
+            <details>
+                <summary>更多模板颜色</summary>
+                <div class="color">
+                    <label for="template-top-color">设置顶部颜色</label>
+                    <input type="color" id="template-top-color" data-parent="template-color">
+                </div>
+            </details>
+        </div>
+        <div class="background">
             <div class="color">
-                <label for="sidebar-footer-color">侧边底部颜色：</label>
-                <input type="color" id="sidebar-footer-color" data-parent="sidebar-color">
+                <label class="little-header" for="background-color">背景颜色</label>
+                <input type="color" id="background-color">
             </div>
-        </details>
+        </div>
+        <div class="inbox">
+            <div class="color">
+                <label class="little-header" for="inbox-color">inbox颜色</label>
+                <input type="color" id="inbox-color">
+            </div>
+        </div>
+        <div class="trash">
+            <div class="color">
+                <label class="little-header" for="trash-color">回收站颜色</label>
+                <input type="color" id="trash-color">
+            </div>
+        </div>
     </div>
 
-    <div class="top">
-        <div class="color">
-            <label for="topbar-color">顶部栏颜色：</label>
-            <input type="color" id="topbar-color">
-        </div>
+    <div class="template-box">
         <details>
-            <summary>更多顶部颜色</summary>
-            <div class="color">
-                <label for="topbar-option-color">顶部选项颜色</label>
-                <input type="color" id="topbar-option-color" data-parent="topbar-color">
+            <summary class="little-header">没有灵感？--> 模板</summary>
+            <div class="card">
+                <button id="template-light" class="template-button">浅色模板</button>
+                <button id="template-dark" class="template-button">深色模板</button>
             </div>
-            <div class="color">
-                <label for="topbar-path-color">顶部路径颜色</label>
-                <input type="color" id="topbar-path-color" data-parent="topbar-color">
-            </div>
-            <div class="color">
-                <label for="topbar-share-color">顶部分享颜色</label>
-                <input type="color" id="topbar-share-color" data-parent="topbar-color">
-            </div>
-        </details>
-    </div>
-    <div class="background">
-        <div class="color">
-            <label for="background-color">背景颜色：</label>
-            <input type="color" id="background-color">
-        </div>
-    </div>
-    <div class="inbox">
-        <div class="color">
-            <label for="inbox-color">提醒颜色：</label>
-            <input type="color" id="inbox-color">
-        </div>
-    </div>
-    <div class="template">
-        <details>
-            <summary>没有灵感？--> 模板</summary>
-            <button id="template-light" class="template-button">浅色模板</button>
-            <button id="template-dark" class="template-button">深色模板</button>
-
         </details>
     </div>
     <button id="save">save</button>

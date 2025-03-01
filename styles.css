@@ -5,23 +5,28 @@
 }
 
 body {
-    width: 250px;
-    padding: 10px 20px;
+    width: 500px;
+    padding: 20px 20px;
     border-radius: 5px;
     box-shadow: 4px 4px 6px #00000020;
     background-color: #B3CEE5;
+    color: #333;
 }
 
 h3 {
     text-align: center;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 .sider,
 .top,
 .background,
 .inbox,
+.trash,
+.setting,
+.template,
 .template {
+    width: 200px;
     padding: 10px 12px;
     margin-bottom: 6px;
     border-radius: 5px;
@@ -30,16 +35,19 @@ h3 {
 
 #save {
     width: 100%;
-    height: 30px;
+    height: 40px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 10px;
     box-shadow: 4px 4px 6px #0000002a;
     background-color: #91B8D9;
+    font-size: 14px;
 }
-#save:hover{
+
+#save:hover {
     background-color: #6FA2CE;
     box-shadow: 5px 5px 8px #0000002a;
+    color: white;
 
 }
 
@@ -100,8 +108,30 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 2px;
 }
 
-.template-button{
-width: 30px;
-height: 30px;
-cursor: pointer;
+.template-box {
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 6px #00000020;
+}
+.card{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.template-button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.little-header{
+    font-size: 14px;
+    color: #000000;
 }

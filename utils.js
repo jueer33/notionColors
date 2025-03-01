@@ -1,5 +1,4 @@
-/**
- * 应用颜色到 Notion 页面
+/* 应用颜色到 Notion 页面
  * @param {Object} colors - 颜色配置对象
  */
 function applyColors(colors) {
@@ -40,6 +39,24 @@ function applyColors(colors) {
     // 应用 Inbox 颜色
     const inbox =  document.getElementById('test-customer-io').previousElementSibling;
     if (inbox) inbox.style.backgroundColor = colors.inbox;
+
+    // 应用 trash 颜色
+    const trash =  document.querySelector('.notion-sidebar-trash-menu');
+    if (trash) trash.style.backgroundColor = colors.trash;
+
+    // 应用 setting 颜色
+    const setting = document.querySelector('.notion-dialog >');
+    const settingLeft = document.querySelector('.notion-dialog > :nth-child(1) > :nth-child(1)');
+    const settingRight = document.querySelector('.notion-dialog > :nth-child(1) > :nth-child(2)>:nth-child(1)>');
+    if (setting) setting.style.backgroundColor = colors.setting.main;
+    if (settingLeft) settingLeft.style.backgroundColor = colors.setting.left;
+    if (settingRight) settingRight.style.backgroundColor = colors.setting.right;
+
+    // 应用 template 颜色
+    const template = document.querySelector('div.layout.layout-marketplace');
+    const templateTop = document.querySelector('.layout-full');
+    if (template) template.style.backgroundColor = colors.template.main;
+    if (templateTop) templateTop.style.backgroundColor = colors.template.top;
 }
 
 

@@ -15,7 +15,17 @@ const templates = {
             share: '#e0e0e0'
         },
         background: '#ffffff',
-        inbox: '#e0e0e0'
+        inbox: '#e0e0e0',
+        trash: '#e0e0e0',
+        setting:{
+            main: '#ffffff',
+            left: '#ffffff',
+            right: '#ffffff',
+        },
+        template:{
+            main: '#ffffff',
+            top: '#ffffff',
+        }
     },
     dark: {
         sidebar: {
@@ -32,8 +42,18 @@ const templates = {
             share: '#3d3d3d'
         },
         background: '#1e1e1e',
-        inbox: '#e0e0e0'
-    }
+        inbox: '#e0e0e0',
+        trash: '#e0e0e0',
+        setting:{
+            main: '#1e1e1e',
+            left: '#1e1e1e',
+            right: '#1e1e1e',
+        },
+        template:{
+            main: '#1e1e1e',
+            top: '#1e1e1e',
+        }
+    },
 };
 
 // 应用模板颜色
@@ -58,6 +78,18 @@ const applyTemplate = (template) => {
 
     // 设置inbox颜色
     document.getElementById('inbox-color').value = colors.inbox;
+
+    // 设置trash颜色
+    document.getElementById('trash-color').value = colors.trash;
+
+    // 设置setting颜色
+    document.getElementById('setting-color').value = colors.setting.main;
+    document.getElementById('setting-left-color').value = colors.setting.left;
+    document.getElementById('setting-right-color').value = colors.setting.right;
+
+    // 设置template颜色
+    document.getElementById('template-color').value = colors.template.main;
+    document.getElementById('template-top-color').value = colors.template.top;
 
     // 保存颜色配置
     saveColors(colors);

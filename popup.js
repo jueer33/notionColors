@@ -16,7 +16,17 @@ window.addEventListener('load', () => {
             share: '#ffffff'
         },
         background: '#ffffff',
-        inbox: '#ffffff'
+        inbox: '#ffffff',
+        trash: '#ffffff',
+        setting:{
+            main: '#ffffff',
+            left: '#ffffff',
+            right: '#ffffff',
+        },
+        template:{
+            main: '#ffffff',
+            top: '#ffffff',
+        }
     };
 
     // 从存储中获取颜色设置
@@ -42,7 +52,19 @@ window.addEventListener('load', () => {
         document.getElementById('background-color').value = colors.background;
         // 设置inbox颜色
         document.getElementById('inbox-color').value = colors.inbox;
+        // 设置trash颜色
+        document.getElementById('trash-color').value = colors.trash;
 
+        // 设置setting颜色
+        const settingColor = colors.setting.main;
+        document.getElementById('setting-color').value = settingColor;
+        document.getElementById('setting-left-color').value = colors.setting.left || settingColor;
+        document.getElementById('setting-right-color').value = colors.setting.right || settingColor;
+
+        // 设置模板颜色
+        const templateColor = colors.template.main;
+        document.getElementById('template-color').value = templateColor;
+        document.getElementById('template-top-color').value = colors.template.top || templateColor;
 
         // 初始化自定义状态
         initCustomization();
@@ -63,6 +85,20 @@ window.addEventListener('load', () => {
             const input = document.getElementById(`topbar-${type}-color`);
             input.setAttribute('data-customized', input.value !== topbarMain ? 'true' : 'false');
         });
+
+        // setting
+        const settingMain = document.getElementById('setting-color').value;
+        ['left', 'right'].forEach(type => {
+            const input = document.getElementById(`setting-${type}-color`);
+            input.setAttribute('data-customized', input.value !== settingMain ? 'true' : 'false');
+        });
+
+        // template
+        const templateMain = document.getElementById('template-color').value;
+        ['top'].forEach(type => {
+            const input = document.getElementById(`template-${type}-color`);
+            input.setAttribute('data-customized', input.value !== templateMain ? 'true' : 'false');
+        });
     };
 
     // 初始化事件监听
@@ -70,10 +106,14 @@ window.addEventListener('load', () => {
         // 主颜色监听
         handleMainColorChange('sidebar-color');
         handleMainColorChange('topbar-color');
+        handleMainColorChange('setting-color');
+        handleMainColorChange('template-color');
 
         // 子颜色监听
         handleSubColorChange(document.querySelectorAll('[data-parent="sidebar-color"]'));
         handleSubColorChange(document.querySelectorAll('[data-parent="topbar-color"]'));
+        handleSubColorChange(document.querySelectorAll('[data-parent="setting-color"]'));
+        handleSubColorChange(document.querySelectorAll('[data-parent="template-color"]'));
     };
 
     // 初始化事件监听
@@ -115,7 +155,29 @@ window.addEventListener('load', () => {
 
         // 获取背景颜色
         const backgroundColor = document.getElementById('background-color').value;
+        // 获取index颜色
         const inboxColor = document.getElementById('inbox-color').value;
+        // 获取trash颜色
+        const trashColor = document.getElementById('trash-color').value;
+
+        // 获取setting颜色
+        const settingColor = document.getElementById('setting-color').value;
+        const settingLeftColor = document.getElementById('setting-left-color').value || settingColor;
+        const settingRightColor = document.getElementById('setting-right-color').value || settingColor;
+        const settingColors = {
+            main: settingColor,
+            left: settingLeftColor,
+            right: settingRightColor
+        };
+
+        // 获取template颜色
+        const templateColor = document.getElementById('template-color').value;
+        const templateTopColor = document.getElementById('template-top-color').value || templateColor;
+        const templateColors = {
+            main: templateColor,
+            top: templateTopColor,
+        };
+
 
         // 保存到浏览器存储
         chrome.storage.sync.set({
@@ -123,7 +185,10 @@ window.addEventListener('load', () => {
                 sidebar: sidebarColors,
                 topbar: topbarColors,
                 background: backgroundColor,
-                inbox: inboxColor
+                inbox: inboxColor,
+                trash: trashColor,
+                setting: settingColors,
+                template: templateColors
             }
         });
 
@@ -137,7 +202,10 @@ window.addEventListener('load', () => {
                         sidebar: sidebarColors,
                         topbar: topbarColors,
                         background: backgroundColor,
-                        inbox: inboxColor
+                        inbox: inboxColor,
+                        trash: trashColor,
+                        setting: settingColors,
+                        template: templateColors
                     }]
                 });
             }
