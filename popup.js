@@ -18,6 +18,7 @@ window.addEventListener('load', () => {
         background: '#ffffff',
         inbox: '#ffffff',
         trash: '#ffffff',
+        search: '#ffffff',
         setting:{
             main: '#ffffff',
             left: '#ffffff',
@@ -54,6 +55,8 @@ window.addEventListener('load', () => {
         document.getElementById('inbox-color').value = colors.inbox;
         // 设置trash颜色
         document.getElementById('trash-color').value = colors.trash;
+        // 设置search颜色
+        document.getElementById('search-color').value = colors.search;
 
         // 设置setting颜色
         const settingColor = colors.setting.main;
@@ -159,6 +162,8 @@ window.addEventListener('load', () => {
         const inboxColor = document.getElementById('inbox-color').value;
         // 获取trash颜色
         const trashColor = document.getElementById('trash-color').value;
+        // 获取search颜色
+        const searchColor = document.getElementById('search-color').value;
 
         // 获取setting颜色
         const settingColor = document.getElementById('setting-color').value;
@@ -187,6 +192,7 @@ window.addEventListener('load', () => {
                 background: backgroundColor,
                 inbox: inboxColor,
                 trash: trashColor,
+                search: searchColor,
                 setting: settingColors,
                 template: templateColors
             }
@@ -204,6 +210,7 @@ window.addEventListener('load', () => {
                         background: backgroundColor,
                         inbox: inboxColor,
                         trash: trashColor,
+                        search: searchColor,
                         setting: settingColors,
                         template: templateColors
                     }]

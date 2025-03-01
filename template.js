@@ -17,6 +17,7 @@ const templates = {
         background: '#ffffff',
         inbox: '#e0e0e0',
         trash: '#e0e0e0',
+        search : '#e0e0e0',
         setting:{
             main: '#ffffff',
             left: '#ffffff',
@@ -44,6 +45,7 @@ const templates = {
         background: '#1e1e1e',
         inbox: '#e0e0e0',
         trash: '#e0e0e0',
+        search: '#e0e0e0',
         setting:{
             main: '#1e1e1e',
             left: '#1e1e1e',
@@ -81,6 +83,9 @@ const applyTemplate = (template) => {
 
     // 设置trash颜色
     document.getElementById('trash-color').value = colors.trash;
+
+    // 设置search颜色
+    document.getElementById('search-color').value = colors.search;
 
     // 设置setting颜色
     document.getElementById('setting-color').value = colors.setting.main;

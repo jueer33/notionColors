@@ -44,6 +44,10 @@ function applyColors(colors) {
     const trash =  document.querySelector('.notion-sidebar-trash-menu');
     if (trash) trash.style.backgroundColor = colors.trash;
 
+    // 应用 search 颜色
+    const search = document.querySelector('.notion-search-menu');
+    if (search) search.style.backgroundColor = colors.search;
+
     // 应用 setting 颜色
     const setting = document.querySelector('.notion-dialog >');
     const settingLeft = document.querySelector('.notion-dialog > :nth-child(1) > :nth-child(1)');
