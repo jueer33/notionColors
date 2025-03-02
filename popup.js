@@ -15,19 +15,20 @@ window.addEventListener('load', () => {
             path: '#ffffff',
             share: '#ffffff'
         },
-        background: '#ffffff',
-        inbox: '#ffffff',
-        trash: '#ffffff',
-        search: '#ffffff',
-        setting:{
+        setting: {
             main: '#ffffff',
             left: '#ffffff',
             right: '#ffffff',
         },
-        template:{
+        template: {
             main: '#ffffff',
             top: '#ffffff',
-        }
+        },
+        background: '#ffffff',
+        inbox: '#ffffff',
+        trash: '#ffffff',
+        search: '#ffffff',
+        chat: '#ffffff',
     };
 
     // 从存储中获取颜色设置
@@ -57,6 +58,8 @@ window.addEventListener('load', () => {
         document.getElementById('trash-color').value = colors.trash;
         // 设置search颜色
         document.getElementById('search-color').value = colors.search;
+        // 设置chat颜色
+        document.getElementById('chat-color').value = colors.chat;
 
         // 设置setting颜色
         const settingColor = colors.setting.main;
@@ -77,7 +80,7 @@ window.addEventListener('load', () => {
     const initCustomization = () => {
         // 侧边栏
         const sidebarMain = document.getElementById('sidebar-color').value;
-        ['user', 'option','item', 'footer'].forEach(type => {
+        ['user', 'option', 'item', 'footer'].forEach(type => {
             const input = document.getElementById(`sidebar-${type}-color`);
             input.setAttribute('data-customized', input.value !== sidebarMain ? 'true' : 'false');
         });
@@ -155,16 +158,6 @@ window.addEventListener('load', () => {
             path: topbarPathColor,
             share: topbarShareColor
         };
-
-        // 获取背景颜色
-        const backgroundColor = document.getElementById('background-color').value;
-        // 获取index颜色
-        const inboxColor = document.getElementById('inbox-color').value;
-        // 获取trash颜色
-        const trashColor = document.getElementById('trash-color').value;
-        // 获取search颜色
-        const searchColor = document.getElementById('search-color').value;
-
         // 获取setting颜色
         const settingColor = document.getElementById('setting-color').value;
         const settingLeftColor = document.getElementById('setting-left-color').value || settingColor;
@@ -183,6 +176,16 @@ window.addEventListener('load', () => {
             top: templateTopColor,
         };
 
+        // 获取背景颜色
+        const backgroundColor = document.getElementById('background-color').value;
+        // 获取index颜色
+        const inboxColor = document.getElementById('inbox-color').value;
+        // 获取trash颜色
+        const trashColor = document.getElementById('trash-color').value;
+        // 获取search颜色
+        const searchColor = document.getElementById('search-color').value;
+        // 获取chat颜色
+        const chatColor = document.getElementById('chat-color').value
 
         // 保存到浏览器存储
         chrome.storage.sync.set({
@@ -194,7 +197,8 @@ window.addEventListener('load', () => {
                 trash: trashColor,
                 search: searchColor,
                 setting: settingColors,
-                template: templateColors
+                template: templateColors,
+                chat: chatColor
             }
         });
 
@@ -212,7 +216,8 @@ window.addEventListener('load', () => {
                         trash: trashColor,
                         search: searchColor,
                         setting: settingColors,
-                        template: templateColors
+                        template: templateColors,
+                        chat: chatColor
                     }]
                 });
             }

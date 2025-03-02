@@ -32,26 +32,10 @@ function applyColors(colors) {
     if (topbarPath) topbarPath.style.backgroundColor = colors.topbar.path;
     if (topbarShare) topbarShare.style.backgroundColor = colors.topbar.share;
 
-    // 应用背景颜色
-    const background = document.querySelector('.notion-frame');
-    if (background) background.style.backgroundColor = colors.background;
-
-    // 应用 Inbox 颜色
-    const inbox =  document.getElementById('test-customer-io').previousElementSibling;
-    if (inbox) inbox.style.backgroundColor = colors.inbox;
-
-    // 应用 trash 颜色
-    const trash =  document.querySelector('.notion-sidebar-trash-menu');
-    if (trash) trash.style.backgroundColor = colors.trash;
-
-    // 应用 search 颜色
-    const search = document.querySelector('.notion-search-menu');
-    if (search) search.style.backgroundColor = colors.search;
-
     // 应用 setting 颜色
-    const setting = document.querySelector('.notion-dialog >');
-    const settingLeft = document.querySelector('.notion-dialog > :nth-child(1) > :nth-child(1)');
-    const settingRight = document.querySelector('.notion-dialog > :nth-child(1) > :nth-child(2)>:nth-child(1)>');
+    const setting = document.querySelector('#notion-app > div > div.notion-overlay-container.notion-default-overlay-container > div:nth-child(2) > div > div > div.notion-dialog > div');
+    const settingLeft = document.querySelector('#notion-app > div > div.notion-overlay-container.notion-default-overlay-container > div:nth-child(2) > div > div > div.notion-dialog > div > div:nth-child(1)');
+    const settingRight = document.querySelector('#notion-app > div > div.notion-overlay-container.notion-default-overlay-container > div:nth-child(2) > div > div > div.notion-dialog > div > div:nth-child(2) > div');
     if (setting) setting.style.backgroundColor = colors.setting.main;
     if (settingLeft) settingLeft.style.backgroundColor = colors.setting.left;
     if (settingRight) settingRight.style.backgroundColor = colors.setting.right;
@@ -59,11 +43,29 @@ function applyColors(colors) {
     // 应用 template 颜色
     const template = document.querySelector('div.layout.layout-marketplace');
     const templateTop = document.querySelector('.layout-full');
-    if (template) template.style.backgroundColor = colors.template.main;
-    if (templateTop) templateTop.style.backgroundColor = colors.template.top;
+    if (template) template.style.setProperty('background-color', colors.template.main,);
+    if (templateTop) templateTop.style.setProperty('background-color', colors.template.top,);
+
+    // 应用背景颜色
+    const background = document.querySelector('.notion-frame');
+    if (background) background.style.backgroundColor = colors.background;
+
+    // 应用 Inbox 颜色
+    const inbox = document.getElementById('test-customer-io').previousElementSibling;
+    if (inbox && !inbox.classList.contains('notion-scroller') && !inbox.classList.contains('vertical')) { inbox.style.backgroundColor = colors.inbox; }
+
+    // 应用 trash 颜色
+    const trash = document.querySelector('.notion-sidebar-trash-menu');
+    if (trash) trash.style.backgroundColor = colors.trash;
+
+    // 应用 search 颜色
+    const search = document.querySelector('.notion-search-menu');
+    if (search) search.style.backgroundColor = colors.search;
+
+    // 应用 chat 颜色
+    const chat = document.querySelector('div.layout.layout-chat');
+    if (chat) chat.style.backgroundColor = colors.chat;
 }
-
-
 // 主颜色变化处理函数
 const handleMainColorChange = (mainInputId) => {
     const mainInput = document.getElementById(mainInputId);

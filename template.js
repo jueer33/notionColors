@@ -14,19 +14,20 @@ const templates = {
             path: '#eeeeee',
             share: '#e0e0e0'
         },
-        background: '#ffffff',
-        inbox: '#e0e0e0',
-        trash: '#e0e0e0',
-        search : '#e0e0e0',
-        setting:{
+        setting: {
             main: '#ffffff',
             left: '#ffffff',
             right: '#ffffff',
         },
-        template:{
+        template: {
             main: '#ffffff',
             top: '#ffffff',
-        }
+        },
+        background: '#ffffff',
+        inbox: '#e0e0e0',
+        trash: '#e0e0e0',
+        search: '#e0e0e0',
+        chat: '#e0e0e0',
     },
     dark: {
         sidebar: {
@@ -42,19 +43,20 @@ const templates = {
             path: '#4d4d4d',
             share: '#3d3d3d'
         },
-        background: '#1e1e1e',
-        inbox: '#e0e0e0',
-        trash: '#e0e0e0',
-        search: '#e0e0e0',
-        setting:{
+        setting: {
             main: '#1e1e1e',
             left: '#1e1e1e',
             right: '#1e1e1e',
         },
-        template:{
+        template: {
             main: '#1e1e1e',
             top: '#1e1e1e',
-        }
+        },
+        background: '#1e1e1e',
+        inbox: '#e0e0e0',
+        trash: '#e0e0e0',
+        search: '#e0e0e0',
+        chat: '#e0e0e0',
     },
 };
 
@@ -75,6 +77,15 @@ const applyTemplate = (template) => {
     document.getElementById('topbar-path-color').value = colors.topbar.path;
     document.getElementById('topbar-share-color').value = colors.topbar.share;
 
+    // 设置setting颜色
+    document.getElementById('setting-color').value = colors.setting.main;
+    document.getElementById('setting-left-color').value = colors.setting.left;
+    document.getElementById('setting-right-color').value = colors.setting.right;
+
+    // 设置template颜色
+    document.getElementById('template-color').value = colors.template.main;
+    document.getElementById('template-top-color').value = colors.template.top;
+
     // 设置背景颜色
     document.getElementById('background-color').value = colors.background;
 
@@ -87,14 +98,8 @@ const applyTemplate = (template) => {
     // 设置search颜色
     document.getElementById('search-color').value = colors.search;
 
-    // 设置setting颜色
-    document.getElementById('setting-color').value = colors.setting.main;
-    document.getElementById('setting-left-color').value = colors.setting.left;
-    document.getElementById('setting-right-color').value = colors.setting.right;
-
-    // 设置template颜色
-    document.getElementById('template-color').value = colors.template.main;
-    document.getElementById('template-top-color').value = colors.template.top;
+    // 设置chat颜色
+    document.getElementById('chat-color').value = colors.chat;
 
     // 保存颜色配置
     saveColors(colors);
