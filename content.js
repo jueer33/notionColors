@@ -17,6 +17,17 @@ function applyColors(colors) {
         sidebarOption.style.paddingRight = '8px';
         sidebarOption.style.marginLeft = '0';
         sidebarOption.style.marginRight = '0';
+
+        // 创建伪元素并设置样式
+        sidebarOption.style.position = 'relative';
+        const pseudoElement = document.createElement('div');
+        pseudoElement.style.position = 'absolute';
+        pseudoElement.style.bottom = '-8px';
+        pseudoElement.style.left = '0';
+        pseudoElement.style.right = '0';
+        pseudoElement.style.height = '8px';
+        pseudoElement.style.backgroundColor = colors.sidebar.option;
+        sidebarOption.appendChild(pseudoElement);
     }
     if (sidebarItem) sidebarItem.style.backgroundColor = colors.sidebar.item;
     if (sidebarFooter) sidebarFooter.style.backgroundColor = colors.sidebar.footer;
@@ -59,8 +70,8 @@ function applyColors(colors) {
     if (trash) trash.style.backgroundColor = colors.trash;
 
     // 应用 search 颜色
-    const search = document.querySelector('.notion-search-menu');
-    if (search) search.style.backgroundColor = colors.search;
+    const search = document.querySelector('.notion-search-menu > *:first-child > *:first-child');
+    if (search) search.style.backgroundColor = `${colors.search} !important`;
 
     // 应用 chat 颜色
     const chat = document.querySelector('div.layout.layout-chat');
@@ -86,8 +97,5 @@ function observePageLoad() {
 
 // 页面加载完成后执行
 window.addEventListener('load', () => {
-    // 延迟5秒后开始监测，确保页面元素渲染完成
-    setTimeout(() => {
-        observePageLoad();
-    }, 1000);
+    observePageLoad();
 });

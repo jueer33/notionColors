@@ -1,62 +1,62 @@
 // 定义模板颜色
 const templates = {
-    light: {
+    BlueWhite: {
         sidebar: {
-            main: '#f5f5f5',
-            user: '#e0e0e0',
-            option: '#eeeeee',
-            item: '#eeeeee',
-            footer: '#e0e0e0'
+            main: '#B3CEE5',
+            user: '#F7E7CE',
+            option: '#B3CEE5',
+            item: '#B3CEE5',
+            footer: '#F7E7CE'
         },
         topbar: {
-            main: '#f5f5f5',
-            option: '#e0e0e0',
-            path: '#eeeeee',
-            share: '#e0e0e0'
+            main: '#F7E7CE',
+            option: '#B3CEE5',
+            path: '#F7E7CE',
+            share: '#F7E7CE'
         },
         setting: {
-            main: '#ffffff',
-            left: '#ffffff',
-            right: '#ffffff',
+            main: '#B3CEE5',
+            left: '#F0F0F4',
+            right: '#B3CEE5',
         },
         template: {
-            main: '#ffffff',
-            top: '#ffffff',
+            main: '#F0F0F4',
+            top: '#F7E7CE',
         },
-        background: '#ffffff',
-        inbox: '#e0e0e0',
-        trash: '#e0e0e0',
-        search: '#e0e0e0',
-        chat: '#e0e0e0',
+        background: '#F0F0F4',
+        inbox: '#F7E7CE',
+        trash: '#B3CEE5',
+        search: '#F7E7CE',
+        chat: '#F0F0F4',
     },
-    dark: {
+    GreenYellow: {
         sidebar: {
-            main: '#2d2d2d',
-            user: '#3d3d3d',
-            option: '#4d4d4d',
-            item: '#4d4d4d',
-            footer: '#3d3d3d'
+            main: '#ACE1AF',
+            user: '#ACE1AF',
+            option: '#ACE1AF',
+            item: '#ACE1AF',
+            footer: '#ACE1AF'
         },
         topbar: {
-            main: '#2d2d2d',
-            option: '#3d3d3d',
-            path: '#4d4d4d',
-            share: '#3d3d3d'
+            main: '#E7D2CC',
+            option: '#ACE1AF',
+            path: '#E7D2CC',
+            share: '#E7D2CC'
         },
         setting: {
-            main: '#1e1e1e',
-            left: '#1e1e1e',
-            right: '#1e1e1e',
+            main: '#E7D2CC',
+            left: '#E7D2CC',
+            right: '#ACE1AF',
         },
         template: {
-            main: '#1e1e1e',
-            top: '#1e1e1e',
+            main: '#FFFDD0',
+            top: '#E7D2CC',
         },
-        background: '#1e1e1e',
-        inbox: '#e0e0e0',
-        trash: '#e0e0e0',
-        search: '#e0e0e0',
-        chat: '#e0e0e0',
+        background: '#FFFDD0',
+        inbox: '#E7D2CC',
+        trash: '#ACE1AF',
+        search: '#FFFDD0',
+        chat: '#FFFDD0',
     },
 };
 
@@ -134,12 +134,12 @@ const initEventListeners = () => {
     handleSubColorChange(document.querySelectorAll('[data-parent="topbar-color"]'));
 
     // 模板按钮监听
-    document.getElementById('template-light')?.addEventListener('click', () => {
-        applyTemplate('light');
+    document.getElementById('blue-white')?.addEventListener('click', () => {
+        applyTemplate('BlueWhite');
     });
 
-    document.getElementById('template-dark')?.addEventListener('click', () => {
-        applyTemplate('dark');
+    document.getElementById('green-yellow')?.addEventListener('click', () => {
+        applyTemplate('GreenYellow');
     });
 };
 

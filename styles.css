@@ -120,13 +120,6 @@ input[type="color"]::-webkit-color-swatch {
     justify-content: flex-start;
     gap: 20px;
 }
-.template-button {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 50px;
-}
-
 .layout {
     display: flex;
     justify-content: space-between;
@@ -135,4 +128,19 @@ input[type="color"]::-webkit-color-swatch {
 .little-header{
     font-size: 14px;
     color: #000000;
+}
+.template-button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 4px 4px 6px #00000020;
+    background-position: center;
+    background-size: cover;
+}
+#blue-white {
+    background-image: url('./icons/BlueWhite.png');
+}
+#green-yellow {
+    background-image: url('./icons/GreenYellow.png');
 }
