@@ -70,8 +70,8 @@ function applyColors(colors) {
     if (trash) trash.style.backgroundColor = colors.trash;
 
     // 应用 search 颜色
-    const search = document.querySelector('.notion-search-menu > *:first-child > *:first-child');
-    if (search) search.style.backgroundColor = `${colors.search} !important`;
+    const search = document.querySelector('div.notion-search-menu').firstElementChild?.firstElementChild;
+    if (search) search.style.backgroundColor =colors.search;
 
     // 应用 chat 颜色
     const chat = document.querySelector('div.layout.layout-chat');
