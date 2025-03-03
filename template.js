@@ -28,7 +28,6 @@ const templates = {
         trash: '#B3CEE5',
         search: '#F7E7CE',
         chat: '#F0F0F4',
-        user: '#F7E7CE'
     },
     GreenYellow: {
         sidebar: {
@@ -58,7 +57,6 @@ const templates = {
         trash: '#ACE1AF',
         search: '#FFFDD0',
         chat: '#FFFDD0',
-        user: '#ACE1AF'
     },
 };
 
@@ -102,9 +100,6 @@ const applyTemplate = (template) => {
 
     // 设置chat颜色
     document.getElementById('chat-color').value = colors.chat;
-
-    // 设置user颜色
-    document.getElementById('user-color').value = colors.user;
 
     // 保存颜色配置
     saveColors(colors);
