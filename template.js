@@ -28,6 +28,7 @@ const templates = {
         trash: '#B3CEE5',
         search: '#F7E7CE',
         chat: '#F0F0F4',
+        user: '#F7E7CE'
     },
     GreenYellow: {
         sidebar: {
@@ -57,6 +58,7 @@ const templates = {
         trash: '#ACE1AF',
         search: '#FFFDD0',
         chat: '#FFFDD0',
+        user: '#ACE1AF'
     },
 };
 
@@ -101,6 +103,9 @@ const applyTemplate = (template) => {
     // 设置chat颜色
     document.getElementById('chat-color').value = colors.chat;
 
+    // 设置user颜色
+    document.getElementById('user-color').value = colors.user;
+
     // 保存颜色配置
     saveColors(colors);
 };
@@ -128,10 +133,14 @@ const initEventListeners = () => {
     // 主颜色监听
     handleMainColorChange('sidebar-color');
     handleMainColorChange('topbar-color');
+    handleMainColorChange('setting-color');
+    handleMainColorChange('template-color');
 
     // 子颜色监听
     handleSubColorChange(document.querySelectorAll('[data-parent="sidebar-color"]'));
     handleSubColorChange(document.querySelectorAll('[data-parent="topbar-color"]'));
+    handleSubColorChange(document.querySelectorAll('[data-parent="setting-color"]'));
+    handleSubColorChange(document.querySelectorAll('[data-parent="template-color"]'));
 
     // 模板按钮监听
     document.getElementById('blue-white')?.addEventListener('click', () => {

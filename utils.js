@@ -76,6 +76,10 @@ function applyColors(colors) {
     // 应用 chat 颜色
     const chat = document.querySelector('div.layout.layout-chat');
     if (chat) chat.style.backgroundColor = colors.chat;
+
+    // 应用 user 颜色
+    const user = document.querySelector('#notion-app > div > div.notion-overlay-container.notion-default-overlay-container > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) > div > div > div > div');
+    if(user) user.style.backgroundColor = colors.user
 }
 // 主颜色变化处理函数
 const handleMainColorChange = (mainInputId) => {

@@ -28,6 +28,7 @@ window.addEventListener('load', () => {
         inbox: '#ffffff',
         trash: '#ffffff',
         search: '#ffffff',
+        user: '#ffffff',
         chat: '#ffffff',
     };
 
@@ -60,6 +61,8 @@ window.addEventListener('load', () => {
         document.getElementById('search-color').value = colors.search;
         // 设置chat颜色
         document.getElementById('chat-color').value = colors.chat;
+        // 设置user颜色
+        document.getElementById('user-color').value = colors.user;
 
         // 设置setting颜色
         const settingColor = colors.setting.main;
@@ -186,6 +189,8 @@ window.addEventListener('load', () => {
         const searchColor = document.getElementById('search-color').value;
         // 获取chat颜色
         const chatColor = document.getElementById('chat-color').value
+        // 获取user颜色
+        const userColor = document.getElementById('user-color').value
 
         // 保存到浏览器存储
         chrome.storage.sync.set({
@@ -198,7 +203,8 @@ window.addEventListener('load', () => {
                 search: searchColor,
                 setting: settingColors,
                 template: templateColors,
-                chat: chatColor
+                chat: chatColor,
+                user:userColor
             }
         });
 
@@ -217,7 +223,8 @@ window.addEventListener('load', () => {
                         search: searchColor,
                         setting: settingColors,
                         template: templateColors,
-                        chat: chatColor
+                        chat: chatColor,
+                        user: userColor
                     }]
                 });
             }
