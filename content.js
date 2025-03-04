@@ -93,12 +93,25 @@ function observePageLoad() {
 
     // 配置观察参数：观察整个 document.body 和所有子节点
     observer.observe(document.body, { childList: true, subtree: true });
-    // setTimeout(() => {
-    //         observer.disconnect(); // 停止观察
-    // }, 10000);
+    setTimeout(() => {
+        observer.disconnect(); // 停止观察
+    }, 1000);
 }
-
+function applyOnClickEvent() {
+    // 使用事件代理将点击事件绑定到整个页面
+    document.body.addEventListener('click', (event) => {
+        chrome.storage.sync.get('notionColors', (data) => {
+            const colors = data.notionColors;
+            if (colors) {
+                console.log("Applying colors on click"); // 调试：确认点击时应用颜色
+                setTimeout(() => applyColors(colors), 500);
+                // observePageLoad();
+            }
+        });
+    });
+}
 // 页面加载完成后执行
 window.addEventListener('load', () => {
     observePageLoad();
+    applyOnClickEvent();
 });

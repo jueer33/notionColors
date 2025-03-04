@@ -32,10 +32,10 @@ const templates = {
     GreenYellow: {
         sidebar: {
             main: '#ACE1AF',
-            user: '#ACE1AF',
+            user: '#FFFFF0',
             option: '#ACE1AF',
             item: '#ACE1AF',
-            footer: '#ACE1AF'
+            footer: '#E7D2CC'
         },
         topbar: {
             main: '#E7D2CC',
@@ -49,14 +49,43 @@ const templates = {
             right: '#ACE1AF',
         },
         template: {
-            main: '#FFFDD0',
+            main: '#FFFFF0',
             top: '#E7D2CC',
         },
-        background: '#FFFDD0',
+        background: '#FFFFF0',
         inbox: '#E7D2CC',
         trash: '#ACE1AF',
-        search: '#FFFDD0',
-        chat: '#FFFDD0',
+        search: '#FFFFF0',
+        chat: '#FFFFF0',
+    },
+    GrayPink: {
+        sidebar: {
+            main: '#DFD6D7',
+            user: '#D9C7C8',
+            option: '#DFD6D7',
+            item: '#DFD6D7',
+            footer: '#DFD6D7'
+        },
+        topbar: {
+            main: '#DFD6D7',
+            option: '#D9C7C8',
+            path: '#DFD6D7',
+            share: '#DFD6D7'
+        },
+        setting: {
+            main: '#DFD6D7',
+            left: '#DFD6D7',
+            right: '#DFD6D7',
+        },
+        template: {
+            main: '#E4E4E2',
+            top: '#DFD6D7',
+        },
+        background: '#E4E4E2',
+        inbox: '#E4E4E2',
+        trash: '#D9C7C8',
+        search: '#E4E4E2',
+        chat: '#E4E4E2',
     },
 };
 
@@ -144,6 +173,10 @@ const initEventListeners = () => {
 
     document.getElementById('green-yellow')?.addEventListener('click', () => {
         applyTemplate('GreenYellow');
+    });
+
+    document.getElementById('gray-pink')?.addEventListener('click', () => {
+        applyTemplate('GrayPink');
     });
 };
 
