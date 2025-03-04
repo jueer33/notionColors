@@ -70,7 +70,7 @@ function applyColors(colors) {
     if (trash) trash.style.backgroundColor = colors.trash;
 
     // 应用 search 颜色
-    const search = document.querySelector('div.notion-search-menu').firstElementChild?.firstElementChild;
+    const search = document.querySelector('#notion-app > div > div.notion-overlay-container.notion-default-overlay-container > div:nth-child(2) > div > div > div.notion-dialog > div > div > div');
     if (search) search.style.backgroundColor =colors.search;
 
     // 应用 chat 颜色
