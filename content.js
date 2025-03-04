@@ -93,9 +93,9 @@ function observePageLoad() {
 
     // 配置观察参数：观察整个 document.body 和所有子节点
     observer.observe(document.body, { childList: true, subtree: true });
-    setTimeout(() => {
-            observer.disconnect(); // 停止观察
-    }, 10000);
+    // setTimeout(() => {
+    //         observer.disconnect(); // 停止观察
+    // }, 10000);
 }
 
 // 页面加载完成后执行
